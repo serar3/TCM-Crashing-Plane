@@ -8,6 +8,8 @@ public class AddImpulse2D : MonoBehaviour
     [Tooltip("Magnitude of the impulse.")]
     public float _impulse = 10f;
 
+    public string _ActionAxisName = "ActionInput";
+
     private Rigidbody2D _rigidbody2D;
 
     void Start()
@@ -16,7 +18,7 @@ public class AddImpulse2D : MonoBehaviour
     }
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.GetButtonDown(_ActionAxisName))
             _rigidbody2D.AddForce(_direction.normalized * _impulse, ForceMode2D.Impulse);
     }
 }
