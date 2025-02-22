@@ -10,6 +10,6 @@ public class MovebyVelocity : MonoBehaviour
     {
         //Applies an initial velocity to the rigidbody
         Rigidbody2D l_rigidbody2D = GetComponent<Rigidbody2D>();
-        l_rigidbody2D.velocity = _direction.normalized * _speed;
+        l_rigidbody2D.linearVelocity = _direction.normalized * _speed;
     }
 }
